@@ -1,0 +1,11 @@
+.btn {
+  border-radius: 0.35rem;
+  border-color: var(--main-bg-color);
+  padding: 0.5rem 1.2rem;
+  background-color: var(--main-bg-color);
+  transition: opacity ease-in-out 500ms;
+  color: #fff;
+  &:hover {
+    opacity: 0.9;
+  }
+}
