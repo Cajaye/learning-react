@@ -23,3 +23,16 @@ $larger-font: 700;
 @mixin grid-row-layouts($amount) {
   grid-template-rows: repeat($amount, minmax(0, 1fr));
 }
+
+%textgradient {
+  background: linear-gradient(
+    90deg,
+    hsla(276, 91%, 79%, 1) 0%,
+    hsla(254, 74%, 65%, 1) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+}

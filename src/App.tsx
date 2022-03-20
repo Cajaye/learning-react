@@ -1,33 +1,37 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button } from "./components/Button/Button"
+import { data } from "./data"
 
-interface Greeting{
+import "./App.scss"
+
+interface Props{
   state: boolean,
-  names:string []
 }
 
-function Greeting({ state, names }: Greeting) {
-  if (state) {
-    return (
-      <>
-        <h1>Hello</h1>
+const Quotes = ({ state }: Props) => {
+  if (!state) {
+   return <></>
+  } 
+  return (
+      <div className='quotes'>
         <ul>
-          {[...names].map((name) => <li key={name}>{name}</li>)}
+        {[...data].map((quote,i) => <li key={i.toString()}>{quote.anime}</li>)}
         </ul>
-      </>
+      </div>
     
     )
-  } 
-  return <h1></h1>
 }
 
-function App() {
+const App = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
     <main>
-      <Button onClick={() => setToggle(!toggle)} />
-      <Greeting state={toggle} names={["Cajaye","John","Joe","Lee"]}/>
+      <section>
+        <h1>Hello World</h1>
+         <Button onClick={() => setToggle(!toggle)}>Anime</Button>
+      </section>
+        <Quotes state={toggle}/>
     </main>
  )
 }

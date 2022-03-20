@@ -1,13 +1,14 @@
 import "./Button.scss"
 
-interface Button{
+interface Props{
   onClick: () => void,
+  children:string
 }
 
-export function Button({ onClick }: Button) {
+export const Button = ({ onClick,children }: Props) => {
   return (
     <button
       className='btn'
-      onClick={onClick}>Toggle 🚀</button>
+      onClick={onClick}>{ children}</button>
   )
 }
