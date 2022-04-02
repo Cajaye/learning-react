@@ -5,10 +5,12 @@ interface Props{
   children:string
 }
 
-export const Button = ({ onClick,children }: Props) => {
+const Button = ({ onClick,children }: Props) => {
   return (
     <button
       className='btn'
       onClick={onClick}>{ children}</button>
   )
 }
+
+export default Button;
